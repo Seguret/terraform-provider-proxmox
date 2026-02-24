@@ -116,15 +116,15 @@ func (r *NodeServiceResource) applyState(ctx context.Context, node, service, des
 }
 
 // readIntoModel reads the current service state from the API and populates the model.
-func (r *NodeServiceResource) _readIntoModel(ctx context.Context, model *NodeServiceResourceModel) error {
-	svc, err := r.client.GetNodeService(ctx, model.NodeName.ValueString(), model.Service.ValueString())
-	if err != nil {
-		return fmt.Errorf("error reading service state: %w", err)
-	}
-	// record the live state from proxmox so terraform can detect drift
-	model.State = types.StringValue(svc.State)
-	return nil
-}
+// func (r *NodeServiceResource) readIntoMcfodel(ctx context.Context, model *NodeServiceResourceModel) error {
+// 	svc, err := r.client.GetNodeService(ctx, model.NodeName.ValueString(), model.Service.ValueString())
+// 	if err != nil {
+// 		return fmt.Errorf("error reading service state: %w", err)
+// 	}
+// 	// record the live state from proxmox so terraform can detect drift
+// 	model.State = types.StringValue(svc.State)
+// 	return nil
+// }
 
 func (r *NodeServiceResource) Create(ctx context.Context, req resource.CreateRequest, resp *resource.CreateResponse) {
 	var plan NodeServiceResourceModel
