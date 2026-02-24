@@ -7,11 +7,11 @@
 
 ---
 
-## Sommario (Italian Summary)
+## Summary
 
-Provider Terraform per la gestione completa delle risorse di [Proxmox Virtual Environment](https://www.proxmox.com/en/proxmox-virtual-environment/overview). Costruito con il [Terraform Plugin Framework v1.17](https://github.com/hashicorp/terraform-plugin-framework), espone oltre 40 risorse e 20 data source che coprono macchine virtuali, container LXC, storage, firewall, rete, SDN, alta disponibilita', replica, certificati, ACME e molto altro.
+Terraform provider for comprehensive resource management of the [Proxmox Virtual Environment](https://www.proxmox.com/en/proxmox-virtual-environment/overview).Built with the [Terraform Plugin Framework v1.17](https://github.com/hashicorp/terraform-plugin-framework), it exposes over 40 resources and 20 data sources covering virtual machines, LXC containers, storage, firewall, networking, SDN, high availability, replication, certificates, ACME, and more.
 
-**Configurazione rapida:**
+**Quick setup:**
 
 ```hcl
 terraform {
