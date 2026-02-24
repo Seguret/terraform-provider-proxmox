@@ -196,7 +196,7 @@ func (c *Client) DeletePool(ctx context.Context, poolID string) error {
 
 // ChangeUserPassword updates the password for a given user account.
 func (c *Client) ChangeUserPassword(ctx context.Context, userID, password string) error {
-	path := fmt.Sprintf("/access/password")
+	path := "/access/password"
 	
 	body, err := json.Marshal(map[string]string{
 		"userid":   userID,
@@ -239,7 +239,7 @@ func (c *Client) GetOpenIDConfig(ctx context.Context, realm string) (*models.Ope
 
 // AuthorizeOpenID kicks off the OIDC authorization flow and returns the auth URL.
 func (c *Client) AuthorizeOpenID(ctx context.Context, realm, redirectURL string) (*models.OpenIDAuthResponse, error) {
-	path := fmt.Sprintf("/access/openid/auth-url")
+	path := "/access/openid/auth-url"
 	
 	body, err := json.Marshal(map[string]string{
 		"realm":        realm,
@@ -258,7 +258,7 @@ func (c *Client) AuthorizeOpenID(ctx context.Context, realm, redirectURL string)
 
 // LoginOpenID completes the OIDC flow using the authorization code from the callback.
 func (c *Client) LoginOpenID(ctx context.Context, realm, code, redirectURL string) (*models.OpenIDLoginResponse, error) {
-	path := fmt.Sprintf("/access/openid/login")
+	path := "/access/openid/login"
 	
 	body, err := json.Marshal(map[string]string{
 		"realm":        realm,
